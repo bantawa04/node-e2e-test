@@ -2,7 +2,7 @@ describe('Register new user', () => {
   it('Register new user and redirect to signup page', () => {
     //visit baseUrl
     cy.visit("/");
-    //find li elemnt that contains text "Login" and click it
+    //find li elemnt that contains text "Signup" and click it
     cy.get("li").contains("Signup").click();
     //confirm/assert the url is changed to  /signup
     cy.url().should("include", "/signup"); 
