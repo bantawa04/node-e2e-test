@@ -8,7 +8,7 @@ describe('Register new user', () => {
     cy.url().should("include", "/signup"); 
 
     //get input field by id and type given param with delay speed of 100
-    cy.get("#email").type("test@user.com", {delay: 100});
+    cy.get("#email").type("user@user.com", {delay: 100});
     cy.get("#password").type("password123", {delay: 100});
     cy.get("#confirmPassword").type("password123", {delay: 100});
 
@@ -16,5 +16,6 @@ describe('Register new user', () => {
 
     //assert signup success and redirect to login
     cy.url().should("include", "/login"); 
+
   })
 })

@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", (username, password) => {
+  //visit baseUrl
+  cy.visit("/");
+  //find li elemnt that contains text "Login" and click it
+  cy.get("li").contains("Login").click();
+  //get input field by id and type given param with delay speed of 100
+  cy.get("#email").type(username, { delay: 100 });
+  cy.get("#password").type(password, { delay: 100 });
+
+  cy.get(".btn").click();
+})
